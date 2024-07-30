@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{ asset('template/assets/compiled/css/app.css') }}" />
 <link rel="stylesheet" href="{{ asset('template/assets/compiled/css/app-dark.css') }}" />
 <link rel="stylesheet" href="{{ asset('template/assets/compiled/css/iconly.css') }}" />
+<link rel="stylesheet" href="{{ asset('template/assets/extensions/choices.js/public/assets/styles/choices.css') }}">
 
 {{-- css login --}}
 <link rel="stylesheet" href="{{ asset('template/assets/compiled/css/auth.css') }}">
