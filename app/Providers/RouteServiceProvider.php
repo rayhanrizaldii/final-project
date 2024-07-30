@@ -7,6 +7,8 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use App\Models\Permission;
+use App\Models\Role;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -22,8 +24,18 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
+
     public function boot(): void
     {
+
+        Route::bind('permission', function ($value) {
+            return Permission::where('uuid', $value)->firstOrFail();
+        });
+
+        Route::bind('role', function ($value) {
+            return Role::where('uuid', $value)->firstOrFail();
+        });
+
         $this->configureRateLimiting();
 
         $this->routes(function () {
@@ -35,6 +47,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
     }
+
+
 
     /**
      * Configure the rate limiters for the application.
