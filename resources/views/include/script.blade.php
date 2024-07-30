@@ -10,6 +10,10 @@
 <script src="{{ asset('template/assets/static/js/pages/dashboard.js') }}"></script>
 
 
+{{-- script form select --}}
+<script src="{{ asset('template/assets/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
+<script src="{{ asset('template/assets/static/js/pages/form-element-select.js') }}"></script>
+
 {{-- script sidebar --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
