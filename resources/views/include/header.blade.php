@@ -19,10 +19,10 @@
                         <div class="user-menu d-flex">
                             <div class="user-name text-end me-3">
                                 <h6 class="mb-0 text-gray-600">
-                                    John Ducky
+                                    Hello , {{ Auth::user()->nama }}
                                 </h6>
                                 <p class="mb-0 text-sm text-gray-600">
-                                    Administrator
+                                    {{ Auth::user()->roles()->first()->name }}
                                 </p>
                             </div>
                             <div class="user-img d-flex align-items-center">
@@ -36,7 +36,7 @@
                         style="min-width: 11rem">
                         <li>
                             <h6 class="dropdown-header">
-                                Hello, John!
+                                Hello, {{ Auth::user()->nama }}
                             </h6>
                         </li>
                         <li>
@@ -55,7 +55,8 @@
                             <hr class="dropdown-divider" />
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                            <a class="dropdown-item" href="{{ route('logout') }}"><i
+                                    class="icon-mid bi bi-box-arrow-left me-2"></i>
                                 Logout</a>
                         </li>
                     </ul>
