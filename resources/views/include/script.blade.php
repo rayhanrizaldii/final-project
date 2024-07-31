@@ -9,6 +9,9 @@
 <script src="{{ asset('template/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
 <script src="{{ asset('template/assets/static/js/pages/dashboard.js') }}"></script>
 
+{{-- script sweetalert --}}
+<script src="{{ asset('template/assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('template/assets/static/js/pages/sweetalert2.js') }}"></script>>
 
 {{-- script form select --}}
 <script src="{{ asset('template/assets/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
@@ -51,5 +54,40 @@
                 }, 1000); // Waktu yang sama dengan durasi animasi transisi
             }, 3000); // 3000 ms = 3 detik
         }
+    });
+</script>
+
+{{-- script password --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const password = document.getElementById('password-vertical');
+        const passwordConfirmation = document.getElementById('password_confirmation');
+        const form = password.closest('form');
+
+        form.addEventListener('submit', function(event) {
+            if (password.value !== passwordConfirmation.value) {
+                event.preventDefault(); // Mencegah form submit
+                password.classList.add('is-invalid');
+                passwordConfirmation.classList.add('is-invalid');
+
+                if (!passwordConfirmation.nextElementSibling.classList.contains('invalid-feedback')) {
+                    const errorMessage = document.createElement('span');
+                    errorMessage.classList.add('invalid-feedback');
+                    errorMessage.textContent = 'Password konfirmasi tidak sesuai.';
+                    passwordConfirmation.after(errorMessage);
+                }
+            }
+        });
+
+        passwordConfirmation.addEventListener('input', function() {
+            if (password.value === passwordConfirmation.value) {
+                password.classList.remove('is-invalid');
+                passwordConfirmation.classList.remove('is-invalid');
+                const feedback = passwordConfirmation.nextElementSibling;
+                if (feedback && feedback.classList.contains('invalid-feedback')) {
+                    feedback.remove();
+                }
+            }
+        });
     });
 </script>
