@@ -1,13 +1,12 @@
 {{-- script --}}
 
+{{-- <script src="{{ asset('template/assets/static/js/components/sidebar.js') }}"></script> --}}
 <script src="{{ asset('template/assets/static/js/components/dark.js') }}"></script>
 <script src="{{ asset('template/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-
 <script src="{{ asset('template/assets/compiled/js/app.js') }}"></script>
 
 <!-- Need: Apexcharts -->
 <script src="{{ asset('template/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
-<script src="{{ asset('template/assets/static/js/pages/dashboard.js') }}"></script>
 
 {{-- script sweetalert --}}
 <script src="{{ asset('template/assets/extensions/sweetalert2/sweetalert2.min.js') }}"></script>
@@ -17,29 +16,13 @@
 <script src="{{ asset('template/assets/extensions/choices.js/public/assets/scripts/choices.js') }}"></script>
 <script src="{{ asset('template/assets/static/js/pages/form-element-select.js') }}"></script>
 
-{{-- script sidebar --}}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const items = document.querySelectorAll('.sidebar-item');
 
-        // Menandai item sidebar yang sesuai dengan URL halaman saat ini sebagai aktif
-        const currentURL = window.location.href;
-        items.forEach(item => {
-            const link = item.querySelector('a.sidebar-link');
-            if (link && link.href === currentURL) {
-                item.classList.add('active');
-            }
+<script src="{{ asset('template/assets/extensions/dayjs/dayjs.min.js') }}"></script>
+<script src="{{ asset('template/assets/extensions/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('template/assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
+<script src="{{ asset('template/assets/static/js/pages/datatables.js') }}"></script>
+<script src="{{ asset('template/assets/static/js/initTheme.js') }}"></script>
 
-            item.addEventListener('click', function() {
-                // Hapus kelas 'active' dari semua item
-                items.forEach(i => i.classList.remove('active'));
-
-                // Tambahkan kelas 'active' pada item yang diklik
-                this.classList.add('active');
-            });
-        });
-    });
-</script>
 
 {{-- script alert --}}
 <script>

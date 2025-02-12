@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('status');
-            $table->string('nomor_rekening');
-            $table->bigInteger('unit_id')->unique();
             $table->timestamps();
         });
     }

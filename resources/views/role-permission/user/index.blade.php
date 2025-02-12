@@ -34,16 +34,15 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
+                        <div class="table-responsive datatable-minimal">
+                            <table class="table" id="table2">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>No Rekening</th>
                                         <th>Status</th>
-                                        <th>Unit</th>
+                                        {{-- <th>Unit</th> --}}
                                         <th>Role</th>
                                         <th>Action</th>
                                     </tr>
@@ -54,9 +53,8 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $user->nama }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->nomor_rekening }}</td>
                                             <td>{{ $user->status == 1 ? 'Aktif' : 'Tidak Aktif' }}</td>
-                                            <td>{{ $user->unit_id }}</td>
+                                            {{-- <td>{{ $user->unit->nama_unit }}</td> --}}
                                             <td>
                                                 @if (!empty($user->getRoleNames()))
                                                     @foreach ($user->getRoleNames() as $rolename)

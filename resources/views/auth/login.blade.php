@@ -9,26 +9,29 @@
 </head>
 
 <body>
-    <script src="assets/static/js/initTheme.js"></script>
+    <script src="{{ asset('template/assets/static/js/initTheme.js') }}"></script>
     <div id="auth">
         <div class="row h-100">
             <div class="col-lg-12 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="{{ url('login') }}"><img src="{{ asset('template/assets/compiled/svg/logo.svg') }}"
-                                alt="Logo"></a>
+                        <a href="{{ url('login') }}">
+                            {{-- <img src="{{ asset('template/assets/compiled/svg/logo.svg') }}"
+                                alt="Logo"> --}}
+                            <h2>Sistem Prediksi Rasio Keuangan</h2>
+                        </a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
-                    <p class="auth-subtitle mb-3">Log in with your data that you entered during registration.</p>
+                    <p class="auth-subtitle mb-3">Log in with your data.</p>
                     <form action="{{ url('login_process') }}" method="POST">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
                             <input type="text" class="form-control form-control-xl" placeholder="Username or Email"
-                                name="email">
+                                name="login">
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
-                            @error('email')
+                            @error('login')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -76,5 +79,4 @@
     </div>
     @include('include.script')
 </body>
-
 </html>

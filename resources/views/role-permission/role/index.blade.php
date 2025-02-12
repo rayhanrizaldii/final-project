@@ -34,8 +34,8 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
+                        <div class="table-responsive datatable-minimal">
+                            <table class="table" id="table2">
                                 <thead>
                                     <tr>
                                         <th>No</th>

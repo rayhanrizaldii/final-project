@@ -1,0 +1,252 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+
+class ArusKasSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('arus_kas')->insert([
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 100,
+                'nama' => 'Arus Kas dari Aktivitas Operasi',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 110,
+                'nama' => 'Penerimaan Kas dari Pelanggan',
+                'debit' => 20308534,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 120,
+                'nama' => 'Penerimaan Restitusi Pajak',
+                'debit' => 18650,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 130,
+                'nama' => 'Peningkatan Rekening Bank yang Dibatasi Penggunaannya',
+                'debit' => 25840,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 140,
+                'nama' => 'Pembayaran kepada Pemasok dan Beban Lainnya',
+                'debit' => 0,
+                'kredit' => 19119465,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 150,
+                'nama' => 'Pembayaran kepada Karyawan',
+                'debit' => 0,
+                'kredit' => 591402,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 160,
+                'nama' => 'Pembayaran Pajak Penghasilan',
+                'debit' => 0,
+                'kredit' => 520921,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 200,
+                'nama' => 'Arus Kas dari Aktivitas Investasi',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 210,
+                'nama' => 'Penerimaan Penghasilan Bunga',
+                'debit' => 79229,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 211,
+                'nama' => 'Hasil Penjualan Aset Tetap',
+                'debit' => 1626,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 212,
+                'nama' => 'Penambahan Properti Investasi',
+                'debit' => 0,
+                'kredit' => 104038,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 213,
+                'nama' => 'Penambahan Aset Keuangan dari Kontrak Konsesi',
+                'debit' => 0,
+                'kredit' => 735851,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 214,
+                'nama' => 'Penerimaan dari Perpindahan Kepemilikan Aset Keuangan',
+                'debit' => 562247,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 215,
+                'nama' => 'Penempatan Investasi pada Entitas Asosiasi dan Jangka Panjang Lainnya',
+                'debit' => 0,
+                'kredit' => 28738,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 216,
+                'nama' => 'Penempatan Investasi pada Ventura Bersama',
+                'debit' => 0,
+                'kredit' => 422636,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 217,
+                'nama' => 'Pengembalian Investasi pada Ventura Bersama',
+                'debit' => 431851,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 218,
+                'nama' => 'Penambahan Aset Tetap',
+                'debit' => 0,
+                'kredit' => 154302,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 219,
+                'nama' => 'Penambahan Tanah Belum Dikembangkan',
+                'debit' => 0,
+                'kredit' => 111395,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 300,
+                'nama' => 'Arus Kas dari Aktivitas Pendanaan',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 310,
+                'nama' => 'Penerimaan Utang Bank dan Utang Obligasi',
+                'debit' => 4467553,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 320,
+                'nama' => 'Pembayaran Utang Bank dan Utang Obligasi',
+                'debit' => 0,
+                'kredit' => 3292166,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 330,
+                'nama' => 'Pembayaran Surat Utang Jangka Menengah',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 340,
+                'nama' => 'Penerimaan dari Penawaran Umum Terbatas II',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 350,
+                'nama' => 'Pembayaran Biaya Emisi Saham',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 360,
+                'nama' => 'Pembayaran Beban Pinjaman',
+                'debit' => 0,
+                'kredit' => 1005048,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 370,
+                'nama' => 'Pembayaran Liabilitas Sewa',
+                'debit' => 0,
+                'kredit' => 37111,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 380,
+                'nama' => 'Hasil dari Penawaran Saham Perdana (IPO) Anak Perusahaan',
+                'debit' => 0,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 390,
+                'nama' => 'Penyertaan Saham oleh Kepentingan Non Pengendali',
+                'debit' => 96495,
+                'kredit' => 0,
+            ],
+            [
+                'id' => (string) Str::uuid(),
+                'tahun_id' => '5cce402e-b2f0-4e73-b796-f686dbdf0ecf',
+                'kode' => 500,
+                'nama' => 'Kas dan Setara Kas pada Awal Tahun',
+                'debit' => 4336900,
+                'kredit' => 0,
+            ],
+        ]);
+    }
+}

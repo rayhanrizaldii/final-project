@@ -53,7 +53,7 @@
                                                 <input type="email" id="email-id-vertical" class="form-control"
                                                     value="{{ $user->email }}" name="email"
                                                     placeholder="Masukkan Email Anda...">
-                                                    @error('email')
+                                                @error('email')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -63,7 +63,7 @@
                                                 <label for="password-vertical">Password</label>
                                                 <input type="password" id="password-vertical" class="form-control"
                                                     name="password" placeholder="Masukkan Password Anda...">
-                                                    @error('password')
+                                                @error('password')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
@@ -83,36 +83,21 @@
                                                 @enderror
                                             </div>
                                         </div>
-
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="nomor_rekening-vertical">Nomor Rekening</label>
-                                                <input type="number" id="nomor_rekening-vertical" class="form-control"
-                                                    value="{{ $user->nomor_rekening }}" name="nomor_rekening"
-                                                    placeholder="Masukkan Nomor Rekening Anda...">
-                                                    @error('nomor_rekening')
-                                                    <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
+                                        {{-- <div class="col-12">
                                             <div class="form-group">
                                                 <label>Unit</label>
                                                 <select class="form-select" name="unit_id">
                                                     <option value="">Pilih Unit</option>
-                                                    <option value="1" {{ $user->unit_id == 1 ? 'selected' : '' }}>SMP
-                                                    </option>
-                                                    <option value="2" {{ $user->unit_id == 2 ? 'selected' : '' }}>SMA
-                                                    </option>
-                                                    <option value="3" {{ $user->unit_id == 3 ? 'selected' : '' }}>
-                                                        Universitas</option>
+                                                    @foreach ($unit as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->nama_unit }}
+                                                        </option>
+                                                    @endforeach
                                                 </select>
                                                 @error('unit_id')
                                                     <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                        </div>
-
+                                        </div> --}}
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label>Roles</label>
@@ -134,7 +119,7 @@
                                         <div class="col-12 d-flex justify-content-end mt-1">
                                             <button type="submit" class="btn btn-primary me-1 mb-1">Update</button>
                                             <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
-                                            <a href="{{ url('/roles') }}" class="btn btn-light-danger me-1 mb-1">
+                                            <a href="{{ url('/users') }}" class="btn btn-light-danger me-1 mb-1">
                                                 Back
                                             </a>
                                         </div>

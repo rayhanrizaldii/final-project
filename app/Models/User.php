@@ -28,8 +28,6 @@ class User extends Authenticatable
         'email',
         'password',
         'status',
-        'nomor_rekening',
-        'unit_id',
     ];
 
     protected $keyType = 'string';
@@ -47,4 +45,9 @@ class User extends Authenticatable
             }
         });
     }
+
+    // public function unit()
+    // {
+    //     return $this->belongsTo(Unit::class, 'unit_id', 'id');
+    // }
 }

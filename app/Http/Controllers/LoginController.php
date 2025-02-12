@@ -13,24 +13,26 @@ class LoginController extends Controller
     }
 
     public function login_process(Request $request)
-    {
+{
+    $request->validate([
+        'login' => 'required',
+        'password' => 'required|min:8',
+    ]);
 
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required|min:8',
-        ]);
+    $loginType = filter_var($request->login, FILTER_VALIDATE_EMAIL) ? 'email' : 'nama';
 
-        $data = [
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
+    $credentials = [
+        $loginType => $request->login,
+        'password' => $request->password,
+    ];
 
-        if (Auth::attempt($data)) {
-            return redirect()->route('dashboard');
-        } else {
-            return redirect()->route('login')->with('error', 'Invalid Email or Password');
-        };
+    if (Auth::attempt($credentials)) {
+        return redirect()->route('dashboard');
+    } else {
+        return redirect()->route('login')->with('error', 'Invalid Email/Username or Password');
     }
+}
+
 
     public function logout()
     {

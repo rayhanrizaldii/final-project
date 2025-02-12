@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
+use App\Models\Unit;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +20,14 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'name')->all();
-        return view('role-permission.user.create', ['roles' => $roles]);
+        // $units = Unit::get();
+        return view(
+            'role-permission.user.create',
+            [
+                'roles' => $roles,
+                // 'unit' => $units
+            ]
+        );
     }
 
     public function store(Request $request)
@@ -32,9 +40,8 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'max:20', 'confirmed'],
             'status' => ['required', 'boolean'],
-            'nomor_rekening' => ['required', 'string'],
             'roles' => ['required'],
-            'unit_id' => ['required', 'integer', 'unique:users,unit_id']
+            // 'unit_id' => ['required', 'max:255'],
         ]);
 
 
@@ -44,8 +51,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'status' => $request->status,
-            'nomor_rekening' => $request->nomor_rekening,
-            'unit_id' => $request->unit_id,
+            // 'unit_id' => $request->unit_id,
         ]);
         $user->syncRoles($request->roles);
 
@@ -56,12 +62,14 @@ class UserController extends Controller
     {
         $roles = Role::pluck('name', 'name')->all();
         $userRoles = $user->roles->pluck('name', 'name')->all();
+        // $units = Unit::get();
         return view(
             'role-permission.user.edit',
             [
                 'user' => $user,
                 'roles' => $roles,
-                'userRoles' => $userRoles
+                'userRoles' => $userRoles,
+                // 'unit' => $units
             ]
         );
     }
@@ -72,19 +80,18 @@ class UserController extends Controller
 
         $request->validate([
             'nama' => ['required', 'string', 'max:255'],
-            'password' => ['nullable', 'string', 'min:8', 'max:20', 'confirmed'],
+            'password' => ['nullable', 'string', 'min:8', 'max:20'],
             'status' => ['required', 'boolean'],
-            'nomor_rekening' => ['required', 'string'],
             'roles' => ['required'],
-            'unit_id' => ['required', 'integer']
+            // 'unit_id' => ['required'],
         ]);
 
         $data = [
             'nama' => $request->nama,
             'email' => $request->email,
             'status' => $request->status,
-            'nomor_rekening' => $request->nomor_rekening,
-            'unit_id' => $request->unit_id,
+            // 'unit_id' => $request->unit_id,
+            'updated_at' => now(),
         ];
 
         if (!empty($request->password)) {
@@ -99,7 +106,7 @@ class UserController extends Controller
 
     public function destroy($uuid)
     {
-        User::findOrFail($uuid)->delete();
+        User::where('uuid', $uuid)->firstOrFail()->delete();
         return redirect('/users')->with('status', 'User deleted successfully');
     }
 }
